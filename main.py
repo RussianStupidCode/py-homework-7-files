@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from modules.parser import CookBookParser
 from modules.interaction import get_shop_list_by_dishes
+from modules.filesmerge import files_merge
 
 
 if __name__ == "__main__":
@@ -16,3 +17,4 @@ if __name__ == "__main__":
     for key in shop_list:
         print(key, shop_list[key])
 
+    files_merge('./files', './result_file.txt')
