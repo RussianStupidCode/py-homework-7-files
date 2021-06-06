@@ -51,12 +51,12 @@ class CookBookParser:
     @staticmethod
     def read_recipes(file_path: str):
         cook_book = {}
-        file = open(file_path, 'r', encoding="utf-8")
-        recipes = file.read().split("\n\n")
+        with open(file_path, 'r', encoding="utf-8") as file:
+            recipes = file.read().split("\n\n")
 
-        for recipe in recipes:
-            recipe_in_lines = recipe.split("\n")
-            cook_book.update(CookBookParser.get_dish_recipe(recipe_in_lines))
+            for recipe in recipes:
+                recipe_in_lines = recipe.split("\n")
+                cook_book.update(CookBookParser.get_dish_recipe(recipe_in_lines))
 
         return cook_book
 
